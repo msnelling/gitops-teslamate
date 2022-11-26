@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mosquitto
+  labels:
+    app.kubernetes.io/name: mosquitto
+spec:
+  replicas: 1
+  revisionHistoryLimit: 2
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: mosquitto
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: mosquitto
+    spec:
+      containers:
+        - name: mosquitto
+          image: docker.io/eclipse-mosquitto:latest
+          imagePullPolicy: IfNotPresent
+          command:
+            - mosquitto
+          args:
+            - -c
+            - /mosquitto/config/mosquitto.conf
+          securityContext:
+            allowPrivilegeEscalation: false
+            runAsUser: 1883
+            runAsGroup: 1883            
+#            capabilities:
+#              drop:
+#                - "ALL"
+          ports:
+            - containerPort: 1883
+              protocol: TCP
+          volumeMounts:
+            - name: config
+              mountPath: /mosquitto/config
+              readOnly: true
+#          livenessProbe:
+#            tcpSocket:
+#              port: 1883
+#          readinessProbe:
+#            tcpSocket:
+#              port: 1883
+          resources:
+            limits:
+              memory: 256Mi
+              cpu: 100m
+            requests:
+              cpu: 100m
+              memory: 256Mi
+      volumes:
+        - name: config
+          secret:
+            secretName: mosquitto-conf

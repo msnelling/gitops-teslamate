@@ -1,0 +1,24 @@
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: teslamate
+  labels:
+    app.kubernetes.io/name: teslamate
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`teslamate.xmple.io`)
+      kind: Rule
+      services:
+        - name: teslamate
+          port: 80
+      middlewares:
+        - name: forwardauth-authelia
+          namespace: authelia
+  tls:
+    secretName: teslamate-tls
+    options:
+      name: mintls13
+      namespace: traefik

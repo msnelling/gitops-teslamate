@@ -1,0 +1,9 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+commonLabels:
+  variant: prod
+images:
+  - name: docker.io/eclipse-mosquitto
+    newTag: 2.0.15
+bases:
+  - ../../base
