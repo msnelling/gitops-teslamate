@@ -11,7 +11,7 @@ spec:
     namespace: teslamate
     server: {{ .Values.spec.destination.server }}
   source:
-    path: mqtt
+    path: mqtt/overlays/prod
     repoURL: {{ .Values.spec.source.repoURL }}
     targetRevision: {{ .Values.spec.source.targetRevision }}
   syncPolicy:
