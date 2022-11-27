@@ -51,7 +51,7 @@ spec:
               port: 1883
           resources:
             limits:
-              memory: 8Mi
+              memory: 64Mi
               cpu: 10m
             requests:
               cpu: 5m
