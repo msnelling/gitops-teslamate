@@ -30,9 +30,9 @@ spec:
             allowPrivilegeEscalation: false
             runAsUser: 1883
             runAsGroup: 1883            
-#            capabilities:
-#              drop:
-#                - "ALL"
+            capabilities:
+              drop:
+                - "ALL"
           ports:
             - containerPort: 1883
               protocol: TCP
