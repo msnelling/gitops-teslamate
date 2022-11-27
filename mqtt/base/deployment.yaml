@@ -37,25 +37,28 @@ spec:
             - containerPort: 1883
               protocol: TCP
             - name: wss
-              containerPort: 9001
+              containerPort: 8080
               protocol: TCP
           volumeMounts:
             - name: config
               mountPath: /mosquitto/config
               readOnly: true
           livenessProbe:
-            tcpSocket:
-              port: 1883
+            httpGet:
+              path: /
+              port: http
+            initialDelaySeconds: 60
           readinessProbe:
-            tcpSocket:
-              port: 1883
+            httpGet:
+              path: /
+              port: http
           resources:
             limits:
               memory: 64Mi
               cpu: 10m
             requests:
               cpu: 5m
-              memory: 4Mi
+              memory: 32Mi
       volumes:
         - name: config
           secret:
