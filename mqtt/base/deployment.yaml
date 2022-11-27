@@ -48,11 +48,11 @@ spec:
 #              port: 1883
           resources:
             limits:
-              memory: 256Mi
-              cpu: 100m
+              memory: 8Mi
+              cpu: 10m
             requests:
-              cpu: 100m
-              memory: 256Mi
+              cpu: 5m
+              memory: 4Mi
       volumes:
         - name: config
           secret:
