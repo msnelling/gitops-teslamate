@@ -44,6 +44,7 @@ spec:
               mountPath: /mosquitto/config
               readOnly: true
           livenessProbe:
+            initialDelaySeconds: 60
             httpGet:
               path: /
               port: wss
