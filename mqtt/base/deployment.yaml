@@ -44,14 +44,11 @@ spec:
               mountPath: /mosquitto/config
               readOnly: true
           livenessProbe:
-            initialDelaySeconds: 60
-            httpGet:
-              path: /
-              port: wss
+            tcpSocket:
+              port: 1883
           readinessProbe:
-            httpGet:
-              path: /
-              port: wss
+            tcpSocket:
+              port: 1883
           resources:
             limits:
               memory: 8Mi
