@@ -36,6 +36,9 @@ spec:
           ports:
             - containerPort: 1883
               protocol: TCP
+            - name: wss
+              containerPort: 9001
+              protocol: TCP
           volumeMounts:
             - name: config
               mountPath: /mosquitto/config
