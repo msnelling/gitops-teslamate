@@ -46,12 +46,12 @@ spec:
           livenessProbe:
             httpGet:
               path: /
-              port: http
+              port: wss
             initialDelaySeconds: 60
           readinessProbe:
             httpGet:
               path: /
-              port: http
+              port: wss
           resources:
             limits:
               memory: 64Mi
