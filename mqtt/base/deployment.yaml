@@ -40,12 +40,12 @@ spec:
             - name: config
               mountPath: /mosquitto/config
               readOnly: true
-#          livenessProbe:
-#            tcpSocket:
-#              port: 1883
-#          readinessProbe:
-#            tcpSocket:
-#              port: 1883
+          livenessProbe:
+            tcpSocket:
+              port: 1883
+          readinessProbe:
+            tcpSocket:
+              port: 1883
           resources:
             limits:
               memory: 8Mi
