@@ -44,6 +44,9 @@ spec:
             - name: config
               mountPath: /mosquitto/config
               readOnly: true
+            - name: hass-config
+              mountPath: /mosquitto/config/hass.d
+              readOnly: true
           livenessProbe:
             tcpSocket:
               port: mqtt
@@ -60,5 +63,8 @@ spec:
               memory: 32Mi
       volumes:
         - name: config
+          configMap:
+            name: mosquitto-conf
+        - name: hass-config
           secret:
-            secretName: mosquitto-conf
+            secretName: mosquitto-secrets
