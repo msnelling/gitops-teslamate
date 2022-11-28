@@ -45,7 +45,7 @@ spec:
               mountPath: /mosquitto/config
               readOnly: true
             - name: hass-config
-              mountPath: /mosquitto/config/hass.d
+              mountPath: /mosquitto/config/bridge.d
               readOnly: true
           livenessProbe:
             tcpSocket:
