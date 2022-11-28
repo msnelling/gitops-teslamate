@@ -9,7 +9,7 @@ spec:
     - name: mqtt
       port: 1883
       protocol: TCP
-      targetPort: 1883
+      targetPort: mqtt
   selector:
     app.kubernetes.io/name: mosquitto
   type: ClusterIP

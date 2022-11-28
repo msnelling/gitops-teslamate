@@ -34,7 +34,8 @@ spec:
               drop:
                 - "ALL"
           ports:
-            - containerPort: 1883
+            - name: mqtt
+              containerPort: 1883
               protocol: TCP
             - name: wss
               containerPort: 8080
@@ -45,11 +46,11 @@ spec:
               readOnly: true
           livenessProbe:
             tcpSocket:
-              port: wss
+              port: mqtt
             initialDelaySeconds: 60
           readinessProbe:
             tcpSocket:
-              port: wss
+              port: mqtt
           resources:
             limits:
               memory: 64Mi
