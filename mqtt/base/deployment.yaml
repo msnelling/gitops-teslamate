@@ -44,13 +44,11 @@ spec:
               mountPath: /mosquitto/config
               readOnly: true
           livenessProbe:
-            httpGet:
-              path: /
+            tcpSocket:
               port: wss
             initialDelaySeconds: 60
           readinessProbe:
-            httpGet:
-              path: /
+            tcpSocket:
               port: wss
           resources:
             limits:
