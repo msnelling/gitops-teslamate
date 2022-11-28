@@ -4,9 +4,7 @@ commonLabels:
   app.kubernetes.io/instance: teslamate
   app.kubernetes.io/part-of: teslamate
 resources:
-#  - config.yaml
   - secrets.yaml
   - deployment.yaml
   - service.yaml
   - ingress.yaml
-  - secret-store.yaml

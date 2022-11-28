@@ -3,4 +3,5 @@ kind: Kustomization
 commonLabels:
   app.kubernetes.io/part-of: teslamate
 resources:
+  - secret-store.yaml
   - certificate.yaml
