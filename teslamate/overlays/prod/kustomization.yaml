@@ -4,7 +4,7 @@ commonLabels:
   variant: prod
 images:
   - name: docker.io/teslamate/teslamate
-    newTag: 1.27.1
+    newTag: 1.27.2
 bases:
   - ../../base
 patchesJson6902:
