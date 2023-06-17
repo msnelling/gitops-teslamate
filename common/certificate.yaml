@@ -8,7 +8,7 @@ spec:
   secretName: teslamate-tls
   privateKey:
     algorithm: ECDSA
-    size: 384
+    size: 256
   dnsNames:
     - teslamate.xmple.io
   issuerRef:
