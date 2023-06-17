@@ -1,13 +1,15 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-commonLabels:
-  variant: prod
+labels:
+  - includeSelectors: true
+    pairs:
+      variant: prod
 images:
   - name: docker.io/eclipse-mosquitto
     newTag: 2.0.15
-bases:
+resources:
   - ../../base
 configMapGenerator:
-  - name: mosquitto-conf
-    files:
+  - files:
       - mosquitto.conf
+    name: mosquitto-conf
