@@ -1,13 +1,15 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-commonLabels:
-  variant: prod
+labels:
+  - includeSelectors: true
+    pairs:
+      variant: prod
 images:
   - name: docker.io/teslamate/grafana
     newTag: 1.27.1
-bases:
+resources:
   - ../../base
-patchesJson6902:
+patches:
   - patch: |
       - op: add
         path: /metadata/annotations
