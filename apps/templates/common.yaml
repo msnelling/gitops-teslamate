@@ -6,7 +6,7 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  project: teslamate
+  project: applications
   destination:
     namespace: teslamate
     server: {{ .Values.spec.destination.server }}
