@@ -6,7 +6,7 @@ labels:
       variant: prod
 images:
   - name: docker.io/teslamate/teslamate
-    newTag: 1.27.4
+    newTag: 1.28.0
 resources:
   - ../../base
 patches:
