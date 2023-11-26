@@ -38,14 +38,14 @@ spec:
           livenessProbe:
             tcpSocket:
               port: http
-            initialDelaySeconds: 60
+            initialDelaySeconds: 300
           readinessProbe:
             tcpSocket:
               port: http
           resources:
             limits:
               memory: 256Mi
-              cpu: 100m
+              cpu: 500m
             requests:
               cpu: 100m
               memory: 128Mi
