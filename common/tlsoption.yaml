@@ -1,0 +1,10 @@
+apiVersion: traefik.io/v1alpha1
+kind: TLSOption
+metadata:
+  name: mintls13
+  labels:
+    app.kubernetes.io/name: teslamate
+spec:
+  minVersion: VersionTLS13
+  curvePreferences:
+    - CurveP384

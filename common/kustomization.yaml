@@ -5,3 +5,5 @@ commonLabels:
 resources:
   - secret-store.yaml
   - certificate.yaml
+  - middleware.yaml
+  - tlsoption.yaml

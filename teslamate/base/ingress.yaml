@@ -16,9 +16,8 @@ spec:
           port: 80
       middlewares:
         - name: forwardauth-authelia
-          namespace: authelia
   tls:
     secretName: teslamate-tls
     options:
       name: mintls13
-      namespace: traefik
+

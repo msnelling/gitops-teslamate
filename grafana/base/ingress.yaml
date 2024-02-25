@@ -17,12 +17,11 @@ spec:
       middlewares:
         - name: grafana-stripprefix
         - name: forwardauth-authelia
-          namespace: authelia
   tls:
     secretName: teslamate-tls
     options:
       name: mintls13
-      namespace: traefik
+
 ---
 apiVersion: traefik.io/v1alpha1
 kind: Middleware
