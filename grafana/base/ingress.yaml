@@ -9,7 +9,7 @@ spec:
   entryPoints:
     - websecure
   routes:
-    - match: Host(`teslamate.xmple.io`) && PathPrefix(`/grafana/`)
+    - match: Host(`teslamate.xmple.io`) && PathPrefix(`/grafana`)
       kind: Rule
       services:
         - name: grafana
