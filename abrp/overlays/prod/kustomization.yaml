@@ -4,6 +4,9 @@ labels:
   - includeSelectors: true
     pairs:
       variant: prod
+images:
+  - name: docker.io/teslamate/teslamate
+    newTag: '3.0.1'
 resources:
   - ../../base
 configMapGenerator:

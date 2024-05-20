@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: abrp
-          image: docker.io/fetzu/teslamate-abrp:latest
+          image: docker.io/fetzu/teslamate-abrp
           imagePullPolicy: IfNotPresent
           securityContext:
             allowPrivilegeEscalation: false
