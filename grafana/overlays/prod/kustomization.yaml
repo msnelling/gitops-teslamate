@@ -6,7 +6,7 @@ labels:
       variant: prod
 images:
   - name: docker.io/teslamate/grafana
-    newTag: '1.29.2'
+    newTag: '1.30.0'
 resources:
   - ../../base
 patches:
