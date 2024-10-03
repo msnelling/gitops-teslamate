@@ -6,7 +6,7 @@ labels:
       variant: prod
 images:
   - name: docker.io/eclipse-mosquitto
-    newTag: 2.0.18
+    newTag: 2.0.19
 resources:
   - ../../base
 configMapGenerator:
