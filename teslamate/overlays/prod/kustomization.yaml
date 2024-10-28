@@ -9,17 +9,6 @@ images:
     newTag: '1.31.0'
 resources:
   - ../../base
-patches:
-  - patch: |
-      - op: add
-        path: /metadata/annotations
-        value:
-          cfargotunnel.com/cluster-tunnel: k3s-xmple-io
-          cfargotunnel.com/fqdn: teslamate.xmple.io
-    target:
-      version: v1
-      kind: Service
-      name: teslamate
 configMapGenerator:
   - name: teslamate-config-env
     envs:
