@@ -17,7 +17,7 @@ spec:
             type: PathPrefix
             value: /grafana
       backendRefs:
-        - name: teslamate
+        - name: grafana
           kind: Service
           port: 80
       filters:
