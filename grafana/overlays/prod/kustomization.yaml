@@ -6,7 +6,7 @@ labels:
       variant: prod
 images:
   - name: docker.io/teslamate/grafana
-    newTag: '2.1.0'
+    newTag: '2.1.1'
 resources:
   - ../../base
 configMapGenerator:
